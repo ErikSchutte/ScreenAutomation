@@ -38,10 +38,7 @@ namespace ScreenAutomation.App
 
             var ts = DateTimeOffset.Now.ToUnixTimeMilliseconds() / 1000.0;
 
-            // NEW: multi-template detection
             LastObjects = await _detector.DetectAsync(frame, ts);
-
-            // (optional) legacy single-template click behavior kept:
             if (templateGray != null &&
                 frame.Width >= templateGray.Width && frame.Height >= templateGray.Height)
             {
@@ -55,7 +52,6 @@ namespace ScreenAutomation.App
                 }
             }
 
-            // OCR (unchanged)
             var roi = new OpenCvSharp.Rect(10, 10, Math.Min(400, frame.Width - 10), Math.Min(120, frame.Height - 10));
             using var roiMat = new Mat(frame, roi);
             using var roiBmp = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(roiMat);

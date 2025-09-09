@@ -1,5 +1,19 @@
-/bin/
-/obj/
-/.vs/
-/templates/*.db
+# Build
+bin/
+obj/
+*.user
+*.suo
+.vs/
+
+# Packages & caches
+packages/
+.nuget/
+
+# Local DB / runtime
 automation.db
+templates/*.db
+
+# Logs
+*.log
+TestResults/
+*.trx

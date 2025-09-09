@@ -11,7 +11,6 @@ namespace ScreenAutomation.Core
 
     public interface ITemplateMatcher
     {
-        // Returns (rect, score) or (null, 0) if not found
         (Rect? Region, double Score) Find(Mat haystackBgrOrGray, Mat templateGray, double threshold = 0.85);
     }
 
