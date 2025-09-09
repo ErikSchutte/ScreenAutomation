@@ -1,0 +1,9 @@
+[
+  {
+    "Id": "btn_template",
+    "Kind": "button",
+    "CanonicalName": "TemplateButton",
+    "File": "template.png",
+    "Threshold": 0.88
+  }
+]
