@@ -1,3 +1,7 @@
 [
-  { "Id": "char_A", "Kind": "glyph", "CanonicalName": "A", "File": "char_A.png", "Threshold": 0.85 }
+  { "Id": "char_back", "Kind": "glyph", "CanonicalName": "back", "File": "character/back.png", "Threshold": 0.85 },
+  { "Id": "char_east", "Kind": "glyph", "CanonicalName": "east", "File": "character/east.png", "Threshold": 0.85 },
+  { "Id": "char_north", "Kind": "glyph", "CanonicalName": "north", "File": "character/north.png", "Threshold": 0.85 },
+  { "Id": "char_south", "Kind": "glyph", "CanonicalName": "south", "File": "character/south.png", "Threshold": 0.85 },
+  { "Id": "char_west", "Kind": "glyph", "CanonicalName": "west", "File": "character/west.png", "Threshold": 0.85 }
 ]
