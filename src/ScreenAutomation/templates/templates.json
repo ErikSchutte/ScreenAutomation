@@ -1,9 +1,3 @@
 [
-  {
-    "Id": "btn_template",
-    "Kind": "button",
-    "CanonicalName": "TemplateButton",
-    "File": "template.png",
-    "Threshold": 0.88
-  }
+  { "Id": "char_A", "Kind": "glyph", "CanonicalName": "A", "File": "char_A.png", "Threshold": 0.85 }
 ]
