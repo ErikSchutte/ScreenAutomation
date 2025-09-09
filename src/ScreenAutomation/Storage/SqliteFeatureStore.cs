@@ -13,7 +13,7 @@ namespace ScreenAutomation.Storage
         private SqliteConnection Open()
         {
             // Allow :memory: for tests, or a file path for prod
-            var cs = _pathOrConn.Contains("=") ? _pathOrConn : $"Data Source={_pathOrConn}";
+            var cs = _pathOrConn.Contains('=') ? _pathOrConn : $"Data Source={_pathOrConn}";
             var con = new SqliteConnection(cs);
             con.Open();
             return con;

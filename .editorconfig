@@ -1,0 +1,8 @@
+# C# analyzer severity
+root = true
+
+[*.cs]
+dotnet_analyzer_diagnostic.severity = warning
+
+# Keep DI-friendly interfaces without failing the build
+dotnet_diagnostic.CA1859.severity = suggestion

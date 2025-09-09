@@ -12,7 +12,7 @@ using ScreenAutomation.Storage;
 using ScreenAutomation.Util;
 using ScreenAutomation.Vision;
 
-internal class Program
+internal sealed class Program
 {
     static async Task Main()
     {

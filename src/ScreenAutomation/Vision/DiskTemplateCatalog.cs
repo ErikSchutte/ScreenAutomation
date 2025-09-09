@@ -9,6 +9,7 @@ namespace ScreenAutomation.Vision
 
     public sealed class DiskTemplateCatalog : ITemplateCatalog
     {
+        private static readonly JsonSerializerOptions JsonIndented = new() { WriteIndented = true };
         private readonly string _rootDir;   // e.g., "./templates"
         private readonly string _indexFile; // e.g., "./templates/templates.json"
         private List<TemplateSpec> _templates = new();
@@ -36,7 +37,7 @@ namespace ScreenAutomation.Vision
                     new TemplateSpec { Id="btn_template", Kind="button", CanonicalName="TemplateButton", File="template.png", Threshold=0.88 }
                 };
                 Directory.CreateDirectory(_rootDir);
-                File.WriteAllText(_indexFile, JsonSerializer.Serialize(starter, new JsonSerializerOptions { WriteIndented = true }));
+                File.WriteAllText(_indexFile, JsonSerializer.Serialize(starter, JsonIndented));
                 _templates = starter.ToList();
                 return;
             }

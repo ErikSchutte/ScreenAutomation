@@ -30,11 +30,15 @@ namespace ScreenAutomation.Input
 
         public void Click(int x, int y)
         {
-            SetCursorPos(x, y);
-            var inputs = new INPUT[2];
-            inputs[0].type = INPUT_MOUSE; inputs[0].U.mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
-            inputs[1].type = INPUT_MOUSE; inputs[1].U.mi.dwFlags = MOUSEEVENTF_LEFTUP;
-            SendInput((uint)inputs.Length, inputs, Marshal.SizeOf<INPUT>());
+            if (!SetCursorPos(x, y))
+                throw new System.ComponentModel.Win32Exception(Marshal.GetLastWin32Error(), "SetCursorPos failed");
+                var inputs = new INPUT[2];
+                inputs[0].type = INPUT_MOUSE; inputs[0].U.mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
+                inputs[1].type = INPUT_MOUSE; inputs[1].U.mi.dwFlags = MOUSEEVENTF_LEFTUP;
+                
+                uint sent = SendInput((uint)inputs.Length, inputs, Marshal.SizeOf<INPUT>());
+                if (sent != (uint)inputs.Length)
+                    throw new System.ComponentModel.Win32Exception(Marshal.GetLastWin32Error(), $"SendInput sent {sent}/{inputs.Length}");
         }
     }
 }
