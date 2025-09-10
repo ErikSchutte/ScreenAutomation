@@ -5,6 +5,9 @@
 *.user
 *.suo
 
+# Legacy
+_legacy
+
 # Tests & coverage
 **/TestResults/
 **/TestOutput/
