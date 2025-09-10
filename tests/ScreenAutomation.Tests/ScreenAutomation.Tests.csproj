@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <RootNamespace>ScreenAutomation.Tests</RootNamespace>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\ScreenAutomation\ScreenAutomation.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+    <PackageReference Include="FluentAssertions" />
+    <PackageReference Include="coverlet.collector" />
+    <PackageReference Include="FsCheck.Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Include test assets (images) without copying noise to bin -->
+    <None Include="_assets\**\*" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>
+

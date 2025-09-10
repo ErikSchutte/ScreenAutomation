@@ -1,24 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "P2cPuDQC0hQ=",
-  "success": true,
+  "dgSpecHash": "1U+cAUGk4Po=",
+  "success": false,
   "projectFilePath": "C:\\Users\\schut\\source\\repos\\ScreenAutomation\\src\\ScreenAutomation\\ScreenAutomation.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\schut\\.nuget\\packages\\microsoft.data.sqlite\\8.0.7\\microsoft.data.sqlite.8.0.7.nupkg.sha512",
-    "C:\\Users\\schut\\.nuget\\packages\\microsoft.data.sqlite.core\\8.0.7\\microsoft.data.sqlite.core.8.0.7.nupkg.sha512",
-    "C:\\Users\\schut\\.nuget\\packages\\microsoft.win32.systemevents\\9.0.0\\microsoft.win32.systemevents.9.0.0.nupkg.sha512",
-    "C:\\Users\\schut\\.nuget\\packages\\opencvsharp4\\4.9.0.20240103\\opencvsharp4.4.9.0.20240103.nupkg.sha512",
-    "C:\\Users\\schut\\.nuget\\packages\\opencvsharp4.extensions\\4.9.0.20240103\\opencvsharp4.extensions.4.9.0.20240103.nupkg.sha512",
-    "C:\\Users\\schut\\.nuget\\packages\\opencvsharp4.runtime.win\\4.9.0.20240103\\opencvsharp4.runtime.win.4.9.0.20240103.nupkg.sha512",
-    "C:\\Users\\schut\\.nuget\\packages\\opencvsharp4.windows\\4.9.0.20240103\\opencvsharp4.windows.4.9.0.20240103.nupkg.sha512",
-    "C:\\Users\\schut\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.6\\sqlitepclraw.bundle_e_sqlite3.2.1.6.nupkg.sha512",
-    "C:\\Users\\schut\\.nuget\\packages\\sqlitepclraw.core\\2.1.6\\sqlitepclraw.core.2.1.6.nupkg.sha512",
-    "C:\\Users\\schut\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.6\\sqlitepclraw.lib.e_sqlite3.2.1.6.nupkg.sha512",
-    "C:\\Users\\schut\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.1.6\\sqlitepclraw.provider.e_sqlite3.2.1.6.nupkg.sha512",
-    "C:\\Users\\schut\\.nuget\\packages\\system.drawing.common\\9.0.0\\system.drawing.common.9.0.0.nupkg.sha512",
-    "C:\\Users\\schut\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
-    "C:\\Users\\schut\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\schut\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.26100.57\\microsoft.windows.sdk.net.ref.10.0.26100.57.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1008",
+      "level": "Error",
+      "message": "Projects that use central package version management should not define the version on the PackageReference items but on the PackageVersion items: StyleCop.Analyzers;Microsoft.CodeAnalysis.NetAnalyzers;OpenCvSharp4.Windows;OpenCvSharp4.Extensions;Microsoft.Data.Sqlite;System.Drawing.Common.",
+      "projectPath": "C:\\Users\\schut\\source\\repos\\ScreenAutomation\\src\\ScreenAutomation\\ScreenAutomation.csproj",
+      "filePath": "C:\\Users\\schut\\source\\repos\\ScreenAutomation\\src\\ScreenAutomation\\ScreenAutomation.csproj",
+      "targetGraphs": []
+    }
+  ]
 }

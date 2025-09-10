@@ -1,36 +1,39 @@
-name: .NET
+name: CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
-  build:
+  build-test:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '9.0.x'
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Cache NuGet
-        uses: actions/cache@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
         with:
-          path: ~/.nuget/packages
-          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json', '**/*.csproj') }}
-          restore-keys: |
-            ${{ runner.os }}-nuget-
+          dotnet-version: |
+            8.0.x
 
       - name: Restore
         run: dotnet restore
 
-      - name: Build (Release)
+      - name: Build
         run: dotnet build --configuration Release --no-restore
 
-      - name: Test (detailed)
-        run: dotnet test ./tests/ScreenAutomation.Tests/ScreenAutomation.Tests.csproj --no-build --verbosity detailed
+      - name: Test with coverage
+        run: >
+          dotnet test --configuration Release --no-build
+          /p:CollectCoverage=true
+          /p:CoverletOutput=TestResults/coverage/
+          /p:CoverletOutputFormat=cobertura
 
-      - name: Upload test results
-        if: always()
+      - name: Publish coverage artifact
         uses: actions/upload-artifact@v4
         with:
-          name: test-results
-          path: '**/*.trx'
+          name: coverage
+          path: "**/TestResults/coverage/*.cobertura.xml"
