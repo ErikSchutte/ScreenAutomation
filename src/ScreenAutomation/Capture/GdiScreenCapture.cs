@@ -4,7 +4,7 @@ namespace ScreenAutomation.Capture
     using System.Runtime.InteropServices;
     using ScreenAutomation.Core;
 
-    public sealed class GdiScreenCapture : IScreenCapture
+    public sealed partial class GdiScreenCapture : IScreenCapture
     {
         public Bitmap CaptureDesktop()
         {
@@ -14,11 +14,12 @@ namespace ScreenAutomation.Capture
             var bmp = new Bitmap(w, h, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
             using (var g = Graphics.FromImage(bmp))
             {
-                g.CopyFromScreen(0, 0, 0, 0, new System.Drawing.Size(w, h), CopyPixelOperation.SourceCopy);
+                g.CopyFromScreen(0, 0, 0, 0, new DSize(w, h), CopyPixelOperation.SourceCopy);
             }
             return bmp;
         }
 
-        [DllImport("user32.dll")] private static extern int GetSystemMetrics(int nIndex);
+        [LibraryImport("user32.dll")]
+        private static partial int GetSystemMetrics(int nIndex);
     }
 }

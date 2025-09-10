@@ -1,9 +1,11 @@
 [
-  {
-    "Id": "btn_template",
-    "Kind": "button",
-    "CanonicalName": "TemplateButton",
-    "File": "template.png",
-    "Threshold": 0.88
-  }
+  { "Id": "char_back", "Kind": "glyph", "CanonicalName": "back", "File": "character/back.png", "Threshold": 0.85 },
+  { "Id": "char_east", "Kind": "glyph", "CanonicalName": "east", "File": "character/east.png", "Threshold": 0.85 },
+  { "Id": "char_north", "Kind": "glyph", "CanonicalName": "north", "File": "character/north.png", "Threshold": 0.85 },
+  { "Id": "char_south", "Kind": "glyph", "CanonicalName": "south", "File": "character/south.png", "Threshold": 0.85 },
+  { "Id": "char_west", "Kind": "glyph", "CanonicalName": "west", "File": "character/west.png", "Threshold": 0.85 }
+  { "Id": "char_north-west", "Kind": "glyph", "CanonicalName": "north-west", "File": "character/north-west.png", "Threshold": 0.85 }
+  { "Id": "char_north-east", "Kind": "glyph", "CanonicalName": "north-east", "File": "character/north-east.png", "Threshold": 0.85 }
+  { "Id": "char_south-west", "Kind": "glyph", "CanonicalName": "south-west", "File": "character/south-west.png", "Threshold": 0.85 }
+  { "Id": "char_south-east", "Kind": "glyph", "CanonicalName": "south-east", "File": "character/south-east.png", "Threshold": 0.85 }
 ]

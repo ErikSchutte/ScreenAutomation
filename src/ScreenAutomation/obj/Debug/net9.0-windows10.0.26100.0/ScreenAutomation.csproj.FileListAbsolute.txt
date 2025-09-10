@@ -55,3 +55,13 @@ C:\Users\schut\source\repos\ScreenAutomation\src\ScreenAutomation\obj\Debug\net9
 C:\Users\schut\source\repos\ScreenAutomation\src\ScreenAutomation\obj\Debug\net9.0-windows10.0.26100.0\ScreenAutomation.pdb
 C:\Users\schut\source\repos\ScreenAutomation\src\ScreenAutomation\obj\Debug\net9.0-windows10.0.26100.0\ScreenAutomation.genruntimeconfig.cache
 C:\Users\schut\source\repos\ScreenAutomation\src\ScreenAutomation\obj\Debug\net9.0-windows10.0.26100.0\ref\ScreenAutomation.dll
+C:\Users\schut\source\repos\ScreenAutomation\src\ScreenAutomation\bin\Debug\net9.0-windows10.0.26100.0\templates\character\back.png
+C:\Users\schut\source\repos\ScreenAutomation\src\ScreenAutomation\bin\Debug\net9.0-windows10.0.26100.0\templates\character\east.png
+C:\Users\schut\source\repos\ScreenAutomation\src\ScreenAutomation\bin\Debug\net9.0-windows10.0.26100.0\templates\character\front.png
+C:\Users\schut\source\repos\ScreenAutomation\src\ScreenAutomation\bin\Debug\net9.0-windows10.0.26100.0\templates\character\north-east.png
+C:\Users\schut\source\repos\ScreenAutomation\src\ScreenAutomation\bin\Debug\net9.0-windows10.0.26100.0\templates\character\north-west.png
+C:\Users\schut\source\repos\ScreenAutomation\src\ScreenAutomation\bin\Debug\net9.0-windows10.0.26100.0\templates\character\south-east.png
+C:\Users\schut\source\repos\ScreenAutomation\src\ScreenAutomation\bin\Debug\net9.0-windows10.0.26100.0\templates\character\south-west.png
+C:\Users\schut\source\repos\ScreenAutomation\src\ScreenAutomation\bin\Debug\net9.0-windows10.0.26100.0\templates\character\west.png
+C:\Users\schut\source\repos\ScreenAutomation\src\ScreenAutomation\bin\Debug\net9.0-windows10.0.26100.0\templates\templates.json
+C:\Users\schut\source\repos\ScreenAutomation\src\ScreenAutomation\obj\Debug\net9.0-windows10.0.26100.0\ScreenAutomation.sourcelink.json

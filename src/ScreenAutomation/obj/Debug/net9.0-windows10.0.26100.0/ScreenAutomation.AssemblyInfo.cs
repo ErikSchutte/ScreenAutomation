@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ScreenAutomation")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+360393734b09582008bda95ca6d1b5f28944861b")]
 [assembly: System.Reflection.AssemblyProductAttribute("ScreenAutomation")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ScreenAutomation")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

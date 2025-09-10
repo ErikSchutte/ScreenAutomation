@@ -4,7 +4,7 @@ namespace ScreenAutomation.Input
     using System.Runtime.InteropServices;
     using ScreenAutomation.Core;
 
-    public sealed class Win32InputController : IInputController
+    public sealed partial class Win32InputController : IInputController
     {
         [StructLayout(LayoutKind.Sequential)] struct INPUT { public int type; public InputUnion U; }
         [StructLayout(LayoutKind.Explicit)] struct InputUnion
@@ -21,8 +21,13 @@ namespace ScreenAutomation.Input
             public short wVk; public short wScan; public int dwFlags; public int time; public IntPtr dwExtraInfo;
         }
 
-        [DllImport("user32.dll", SetLastError = true)] static extern uint SendInput(uint nInputs, INPUT[] pInputs, int cbSize);
-        [DllImport("user32.dll")] static extern bool SetCursorPos(int X, int Y);
+        [LibraryImport("user32.dll", SetLastError = true)]
+        private static partial uint SendInput(uint nInputs, INPUT[] pInputs, int cbSize);
+
+        [LibraryImport("user32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        private static partial bool SetCursorPos(int X, int Y);
+
 
         const int INPUT_MOUSE = 0;
         const int MOUSEEVENTF_LEFTDOWN = 0x0002;
