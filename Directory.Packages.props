@@ -11,9 +11,7 @@
     <!-- Test & tooling -->
     <PackageVersion Include="xunit" Version="2.9.0" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="2.8.2" />
-    <PackageVersion Include="FluentAssertions" Version="6.12.0" />
     <PackageVersion Include="coverlet.collector" Version="6.0.0" />
-    <PackageVersion Include="FsCheck.Xunit" Version="2.16.6" />
 
     <!-- App & Vision deps -->
     <PackageVersion Include="Serilog.Sinks.Console" Version="5.0.1" />

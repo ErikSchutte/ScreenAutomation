@@ -1,57 +1,50 @@
-using OpenCvSharp;
-using ScreenAutomation.Core;
-using ScreenAutomation.Core.Abstractions;
-using ScreenAutomation.Vision.Extensions;
-
-namespace ScreenAutomation.Vision.Detectors;
-
-
-// Extremely simple template matcher using OpenCV's MatchTemplate (CCoeffNormed).
-// This is a baseline to prove the pipeline & test rig; we will harden it over time.
-public sealed class TemplateMatchDetector : IAspectDetector<BoundingBox>, IDisposable
+namespace ScreenAutomation.Vision.Detectors
 {
-    private readonly Mat _template;     // CV_8UC1
-    private readonly int _tw;
-    private readonly int _th;
+    using System;
+    using OpenCvSharp;
+    using ScreenAutomation.Core;
+    using ScreenAutomation.Core.Abstractions;
+    using ScreenAutomation.Vision.Extensions;
 
-    /// <param name="template">Grayscale template pixels (Width*Height == Pixels.Length).</param>
-    public TemplateMatchDetector(ImageBuffer template)
+    // Minimal template matcher (CCoeffNormed). Baseline slice to exercise the pipeline.
+    public sealed class TemplateMatchDetector : IAspectDetector<BoundingBox>, IDisposable
     {
-        _template = template.ToGrayMat(); // wraps the array; we keep it alive in this class
-        _tw = template.Width;
-        _th = template.Height;
-    }
+        private readonly Mat templateMat;   // CV_8UC1
+        private readonly int tw;
+        private readonly int th;
 
-
-    // Perform normalized template matching against the given scene (grayscale).
-    public Detection<BoundingBox> Detect(ImageBuffer image)
-    {
-        using var scene = image.ToGrayMat();
-
-        // result map size = (scene - template + 1)
-        var resW = scene.Cols - _tw + 1;
-        var resH = scene.Rows - _th + 1;
-
-        if (resW <= 0 || resH <= 0)
+        public TemplateMatchDetector(ImageBuffer template)
         {
-            // Template can't fit → trivially "no match"
-            var degenerate = new BoundingBox(0, 0, _tw, _th);
-            return new Detection<BoundingBox>(degenerate, degenerate, 0f);
+            this.templateMat = template.ToGrayMat();
+            this.tw = template.Width;
+            this.th = template.Height;
         }
 
-        using var result = new Mat(resH, resW, MatType.CV_32FC1);
+        public Detection<BoundingBox> Detect(ImageBuffer image)
+        {
+            using var scene = image.ToGrayMat();
 
-        // Use CCoeffNormed which tends to be robust for simple luminance changes.
-        Cv2.MatchTemplate(scene, _template, result, TemplateMatchModes.CCoeffNormed);
+            var resW = scene.Cols - this.tw + 1;
+            var resH = scene.Rows - this.th + 1;
 
-        Cv2.MinMaxLoc(result, out _, out double maxVal, out _, out Point maxLoc);
+            if (resW <= 0 || resH <= 0)
+            {
+                var box = new BoundingBox(0, 0, this.tw, this.th);
+                return new Detection<BoundingBox>(box, box, 0f);
+            }
 
-        var box = new BoundingBox(maxLoc.X, maxLoc.Y, _tw, _th);
-        return new Detection<BoundingBox>(box, box, (float)maxVal);
-    }
+            using var result = new Mat(resH, resW, MatType.CV_32FC1);
 
-    public void Dispose()
-    {
-        _template?.Dispose();
+            Cv2.MatchTemplate(scene, this.templateMat, result, TemplateMatchModes.CCoeffNormed);
+            Cv2.MinMaxLoc(result, out _, out double maxVal, out _, out Point maxLoc);
+
+            var detected = new BoundingBox(maxLoc.X, maxLoc.Y, this.tw, this.th);
+            return new Detection<BoundingBox>(detected, detected, (float)maxVal);
+        }
+
+        public void Dispose()
+        {
+            this.templateMat?.Dispose();
+        }
     }
 }

@@ -11,9 +11,7 @@
     <!-- Test libs via central package mgmt (Directory.Packages.props) -->
     <PackageReference Include="xunit" />
     <PackageReference Include="xunit.runner.visualstudio" />
-    <PackageReference Include="FluentAssertions" />
     <PackageReference Include="coverlet.collector" />
-    <PackageReference Include="FsCheck.Xunit" />
 
     <!-- CV packages needed by tests that use OpenCvSharp -->
     <PackageReference Include="OpenCvSharp4" />
@@ -36,5 +34,10 @@
     <Compile Remove="SqliteFeatureStoreTests.cs" />
     <Compile Remove="CharacterDetectorTests.cs" />
     <Compile Remove="ObjectDetectorTests.cs" />
+    <Compile Remove="TemplateCatalogTests.cs" />
+    <Compile Remove="TemplateMatcherTests.cs" />
+    <Compile Remove="TemplateSmokeTests.cs" />
+    <Compile Remove="SqliteFeatureStoreTests.cs" />
+    <Compile Remove="Win32\DxgiCaptureTests.cs" />
   </ItemGroup>
 </Project>

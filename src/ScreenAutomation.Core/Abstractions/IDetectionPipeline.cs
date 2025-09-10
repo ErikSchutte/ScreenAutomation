@@ -1,6 +1,9 @@
-namespace ScreenAutomation.Core.Abstractions;
-
-public interface IDetectionPipeline
+namespace ScreenAutomation.Core.Abstractions
 {
-    IEnumerable<object> Run(ImageBuffer image);
+    using System.Collections.Generic;
+
+    public interface IDetectionPipeline<TAspect>
+    {
+        IReadOnlyList<Detection<TAspect>> Run(ImageBuffer image);
+    }
 }

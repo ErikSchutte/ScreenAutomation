@@ -1,4 +1,3 @@
-# Keep comments human: explain the “why”, not just the “what”.
 root = true
 
 [*.{cs,csx}]
@@ -20,7 +19,7 @@ dotnet_analyzer_diagnostic.category-Design.severity = warning
 dotnet_analyzer_diagnostic.category-Reliability.severity = warning
 dotnet_analyzer_diagnostic.category-Security.severity = warning
 
-# Naming (basic, we’ll refine later)
+# Naming 
 dotnet_naming_rule.private_fields_underscore.symbols = private_fields
 dotnet_naming_rule.private_fields_underscore.style = underscore_prefix
 dotnet_naming_rule.private_fields_underscore.severity = suggestion
@@ -28,3 +27,10 @@ dotnet_naming_symbols.private_fields.applicable_kinds = field
 dotnet_naming_symbols.private_fields.applicable_accessibilities = private
 dotnet_naming_style.underscore_prefix.required_prefix = _
 dotnet_naming_style.underscore_prefix.capitalization = camel_case
+
+# StyleCop rules (mostly disabled for initial simplicity)
+dotnet_diagnostic.SA1633.severity = none   # file header
+dotnet_diagnostic.SA1200.severity = none   # usings inside namespace
+dotnet_diagnostic.SA1518.severity = suggestion  # newline at EOF
+dotnet_diagnostic.SA1502.severity = suggestion  # one-line elements
+dotnet_diagnostic.SA1503.severity = suggestion  # omitted braces
