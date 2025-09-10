@@ -1,19 +1,28 @@
-# Build
-bin/
-obj/
+# VS / .NET
+**/bin/
+**/obj/
+**/.vs/
 *.user
 *.suo
-.vs/
 
-# Packages & caches
-packages/
-.nuget/
-
-# Local DB / runtime
-automation.db
-templates/*.db
-
-# Logs
-*.log
-TestResults/
+# Tests & coverage
+**/TestResults/
+**/TestOutput/
+**/coverage/
 *.trx
+*.coverage
+*.cobertura.xml
+
+# Tools & IDEs
+.idea/
+.vscode/**.history
+.ReSharper*/
+*_Resharper.*
+*.DotSettings.user
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Artifacts
+artifacts/
