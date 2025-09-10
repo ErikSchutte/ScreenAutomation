@@ -1,5 +1,4 @@
 <Project>
-  <!-- Centralized compiler & analyzer configuration for all projects. -->
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <LangVersion>preview</LangVersion>
@@ -11,10 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- Roslyn analyzers ship with SDK; StyleCop adds consistency where SDK is silent. -->
-    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.556" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="9.0.0" PrivateAssets="All" />
+    <!-- No Version attributes here; CPVM supplies versions -->
+    <PackageReference Include="StyleCop.Analyzers" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" PrivateAssets="All" />
   </ItemGroup>
-
-  <!-- Human note: For app projects we may override TFMs or turn on trimming/AOT later. -->
 </Project>
