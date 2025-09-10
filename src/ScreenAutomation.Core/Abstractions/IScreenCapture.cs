@@ -1,10 +1,9 @@
 namespace ScreenAutomation.Core.Abstractions
 {
-    using System.Collections.Generic;
+    using ScreenAutomation.Core;
 
-    // Orchestrates one capture → run the detection pipeline → return detections.
-    public interface ICaptureRunner<TAspect>
+    public interface IScreenCapture
     {
-        IReadOnlyList<Detection<TAspect>> RunOnce();
+        ImageBuffer Capture();
     }
 }

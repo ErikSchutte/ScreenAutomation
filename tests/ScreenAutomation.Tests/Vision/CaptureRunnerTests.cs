@@ -2,25 +2,12 @@ namespace ScreenAutomation.Tests.Vision
 {
     using OpenCvSharp;
     using ScreenAutomation.Core;
-    using ScreenAutomation.Core.Abstractions;
+    using ScreenAutomation.Tests.Vision.Fakes;
     using ScreenAutomation.Vision.Detectors;
     using ScreenAutomation.Vision.Extensions;
     using ScreenAutomation.Vision.Pipeline;
     using ScreenAutomation.Vision.Runtime;
     using Xunit;
-
-    // Simple fake capture for tests.
-    file sealed class FakeScreenCapture : IScreenCapture
-    {
-        private readonly ImageBuffer buffer;
-
-        public FakeScreenCapture(ImageBuffer buffer)
-        {
-            this.buffer = buffer;
-        }
-
-        public ImageBuffer Capture() => this.buffer;
-    }
 
     public class CaptureRunnerTests
     {

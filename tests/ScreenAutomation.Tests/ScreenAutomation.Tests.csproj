@@ -5,10 +5,13 @@
     <RootNamespace>ScreenAutomation.Tests</RootNamespace>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 
   <ItemGroup>
     <!-- Test libs via central package mgmt (Directory.Packages.props) -->
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
     <PackageReference Include="xunit" />
     <PackageReference Include="xunit.runner.visualstudio" />
     <PackageReference Include="coverlet.collector" />
@@ -16,12 +19,14 @@
     <!-- CV packages needed by tests that use OpenCvSharp -->
     <PackageReference Include="OpenCvSharp4" />
     <PackageReference Include="OpenCvSharp4.runtime.win" />
+    <PackageReference Include="Newtonsoft.Json" />
   </ItemGroup>
 
   <ItemGroup>
     <!-- Project references -->
     <ProjectReference Include="..\..\src\ScreenAutomation.Core\ScreenAutomation.Core.csproj" />
     <ProjectReference Include="..\..\src\ScreenAutomation.Vision\ScreenAutomation.Vision.csproj" />
+    <ProjectReference Include="..\..\src\ScreenAutomation.Storage\ScreenAutomation.Storage.csproj" />
   </ItemGroup>
 
   <ItemGroup>

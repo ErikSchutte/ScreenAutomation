@@ -4,7 +4,7 @@ namespace ScreenAutomation.Vision.Runtime
     using ScreenAutomation.Core;
     using ScreenAutomation.Core.Abstractions;
 
-    // Single-responsibility: grab one frame from IScreenCapture and pass it to the pipeline.
+    // Grabs one frame from IScreenCapture and passes it to the pipeline.
     public sealed class CaptureRunner<TAspect> : ICaptureRunner<TAspect>
     {
         private readonly IScreenCapture capture;

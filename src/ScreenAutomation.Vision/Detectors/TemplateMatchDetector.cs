@@ -6,7 +6,7 @@ namespace ScreenAutomation.Vision.Detectors
     using ScreenAutomation.Core.Abstractions;
     using ScreenAutomation.Vision.Extensions;
 
-    // Minimal template matcher (CCoeffNormed). Baseline slice to exercise the pipeline.
+    // Minimal template matcher using SQDIFF_NORMED; invert the min value to a [0..1] score.
     public sealed class TemplateMatchDetector : IAspectDetector<BoundingBox>, IDisposable
     {
         private readonly Mat templateMat;   // CV_8UC1
@@ -35,11 +35,16 @@ namespace ScreenAutomation.Vision.Detectors
 
             using var result = new Mat(resH, resW, MatType.CV_32FC1);
 
-            Cv2.MatchTemplate(scene, this.templateMat, result, TemplateMatchModes.CCoeffNormed);
-            Cv2.MinMaxLoc(result, out _, out double maxVal, out _, out Point maxLoc);
+            // SQDIFF_NORMED is robust when the template has zero variance (e.g., solid color).
+            Cv2.MatchTemplate(scene, this.templateMat, result, TemplateMatchModes.SqDiffNormed);
 
-            var detected = new BoundingBox(maxLoc.X, maxLoc.Y, this.tw, this.th);
-            return new Detection<BoundingBox>(detected, detected, (float)maxVal);
+            Cv2.MinMaxLoc(result, out double minVal, out _, out Point minLoc, out _);
+
+            // Convert "lower is better" to a confidence-like score.
+            var score = 1f - (float)minVal;
+
+            var detected = new BoundingBox(minLoc.X, minLoc.Y, this.tw, this.th);
+            return new Detection<BoundingBox>(detected, detected, score);
         }
 
         public void Dispose()

@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScreenAutomation.Tests", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenAutomation.Tests", "tests\ScreenAutomation.Tests\ScreenAutomation.Tests.csproj", "{10AF61A7-FB98-4E01-B3D7-979E4937E35F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenAutomation.Storage", "src\ScreenAutomation.Storage\ScreenAutomation.Storage.csproj", "{C70E3784-6F90-4FAA-AE58-F3D4CD50029D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,18 @@ Global
 		{10AF61A7-FB98-4E01-B3D7-979E4937E35F}.Release|x64.Build.0 = Release|Any CPU
 		{10AF61A7-FB98-4E01-B3D7-979E4937E35F}.Release|x86.ActiveCfg = Release|Any CPU
 		{10AF61A7-FB98-4E01-B3D7-979E4937E35F}.Release|x86.Build.0 = Release|Any CPU
+		{C70E3784-6F90-4FAA-AE58-F3D4CD50029D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C70E3784-6F90-4FAA-AE58-F3D4CD50029D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C70E3784-6F90-4FAA-AE58-F3D4CD50029D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C70E3784-6F90-4FAA-AE58-F3D4CD50029D}.Debug|x64.Build.0 = Debug|Any CPU
+		{C70E3784-6F90-4FAA-AE58-F3D4CD50029D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C70E3784-6F90-4FAA-AE58-F3D4CD50029D}.Debug|x86.Build.0 = Debug|Any CPU
+		{C70E3784-6F90-4FAA-AE58-F3D4CD50029D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C70E3784-6F90-4FAA-AE58-F3D4CD50029D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C70E3784-6F90-4FAA-AE58-F3D4CD50029D}.Release|x64.ActiveCfg = Release|Any CPU
+		{C70E3784-6F90-4FAA-AE58-F3D4CD50029D}.Release|x64.Build.0 = Release|Any CPU
+		{C70E3784-6F90-4FAA-AE58-F3D4CD50029D}.Release|x86.ActiveCfg = Release|Any CPU
+		{C70E3784-6F90-4FAA-AE58-F3D4CD50029D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -112,5 +126,6 @@ Global
 		{8A4ACC34-3494-409C-9CE2-7AB50104F08C} = {4929083B-D658-3A95-A833-467090BE77B5}
 		{3DC5683A-BB0C-4741-09B0-2E1643476658} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
 		{10AF61A7-FB98-4E01-B3D7-979E4937E35F} = {3DC5683A-BB0C-4741-09B0-2E1643476658}
+		{C70E3784-6F90-4FAA-AE58-F3D4CD50029D} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 	EndGlobalSection
 EndGlobal
