@@ -16,7 +16,7 @@
     <PackageVersion Include="Newtonsoft.Json" Version="13.0.3" />
 
     <!-- App & Vision deps -->
-    <PackageVersion Include="Serilog.Sinks.Console" Version="5.0.1" />
+    <PackageVersion Include="Serilog.Sinks.Console" Version="6.0.0" />
     <PackageVersion Include="OpenCvSharp4" Version="4.10.0.20240616" />
     <PackageVersion Include="OpenCvSharp4.runtime.win" Version="4.10.0.20240616" />
     <PackageVersion Include="SixLabors.ImageSharp" Version="3.1.11" />
