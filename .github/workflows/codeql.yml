@@ -31,11 +31,11 @@ jobs:
 
       - run: dotnet restore
 
-      - uses: github/codeql-action/init@v3
+      - uses: github/codeql-action/init@v4
         with:
           languages: csharp
 
       # 👇 Build BEFORE analyze so CodeQL sees the code
       - run: dotnet build --configuration Release --no-restore
 
-      - uses: github/codeql-action/analyze@v3
+      - uses: github/codeql-action/analyze@v4
